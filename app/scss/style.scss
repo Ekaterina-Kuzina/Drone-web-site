@@ -119,6 +119,7 @@
         padding-left: 50px;
         display: flex;
         justify-content: space-between;
+        margin-top: 50px;
     }
 
     &__text {
@@ -199,8 +200,8 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-
+        padding-left: 25px;
+        margin-top: 55px;
     }
 
     &__item {
@@ -209,22 +210,60 @@
         align-items: flex-end;
 
         &:nth-child(even) {
-            margin-bottom: 83px;
+            transform: translateY(25px);
+            margin-left: 45px;
         }
-    }
 
-    &__item-1 {
-        position: relative;
-        &::before{
-            content: '';
-            position: absolute;
-            height: 50px;
-            width: 245px;
-            background-image: url(../images/benefits-line-1.svg);
-            top: 32px;
-            right: -106px;
-            background-repeat: no-repeat;
-            background-position: 0 0;
+        &:nth-child(3) {
+            margin-left: 20px;
+        }
+
+        &:nth-child(4) {
+            margin-left: 65px;
+        }
+
+        &:first-child,
+        &:nth-child(3) {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+
+        &:first-child {
+            &::before {
+                top: 32px;
+                right: -60px;
+                height: 48px;
+                width: 245px;
+                background-image: url('../images/benefits-line-1.svg');
+            }
+        }
+
+        &:nth-child(3) {
+            &::before {
+                top: -76px;
+                right: -100px;
+                width: 463px;
+                height: 63px;
+                background-image: url('../images/benefits-line-2.svg');
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 40px;
+                left: 365px;
+                width: 254px;
+                height: 48px;
+                background-image: url('../images/benefits-line-3.svg');
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
         }
     }
 
@@ -266,6 +305,106 @@
         margin-top: 10px;
         font-size: 15px;
         line-height: 18px;
+    }
+}
+
+.specification {
+    &__inner {
+        display: flex;
+        align-items: center;
+        margin-top: 77px;
+
+    }
+
+    &__item{
+        &:first-child{
+            margin-left: 50px;
+        }
+    }
+
+    &__box {
+        width: 280px;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__box-2 {
+        margin-top: 140px;
+    }
+
+    &__box-4 {
+        margin-top: 166px;
+    }
+
+    &__box-1::before {
+        width: 262px;
+        height: 130px;
+        background-image: url('../images/pointer-1.svg');
+        top: 14px;
+        left: 194px;
+    }
+
+    &__box-2::before {
+        width: 389px;
+        height: 87px;
+        background-image: url('../images/pointer-2.svg');
+        top: -68px;
+        left: 222px;
+    }
+
+    &__box-3::before {
+        width: 285px;
+        height: 111px;
+        background-image: url('../images/pointer-3.svg');
+        top: 10px;
+        right: 283px;
+    }
+
+    &__box-4::before {
+        width: 124px;
+        height: 73px;
+        background-image: url('../images/pointer-4.svg');
+        top: -56px;
+        right: 273px;
+    }
+
+    &__box-title {
+        @extend %ubuntu-bold;
+        font-size: 21px;
+        line-height: 28px;
+    }
+
+    &__box-text {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
+
+.questions{
+    &__items{
+        margin-left: 25px;
+        max-width: 757px;
+    }
+    &__item{
+        max-width: 690px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+    &__item-title{
+        @extend %ubuntu-medium ;
+        font-size: 21px;
+        line-height: 28px;
+        color: rgba(#fff , .8);
+        padding: 20px 10px 24px 40px;
+    }
+    &__item-text{
+        margin-left: 50px;
+
     }
 }
 
