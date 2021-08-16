@@ -389,11 +389,22 @@
 .questions{
     &__items{
         margin-left: 25px;
+        margin-top: 38px;
         max-width: 757px;
+        padding-bottom: 15px;
+        position: relative;
+
     }
     &__item{
         max-width: 690px;
         background: rgba(0, 0, 0, 0.3);
+        position: relative;
+        &:nth-child(3)::after{
+            content: url('../images/questions-drone.png');
+            position: absolute;
+            left: 770px;
+            top: 0px;
+        }
     }
     &__item-title{
         @extend %ubuntu-medium ;
@@ -401,10 +412,39 @@
         line-height: 28px;
         color: rgba(#fff , .8);
         padding: 20px 10px 24px 40px;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        &::after{
+            content: url('../images/questions-arrow.svg');
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 67px;
+            right: -72px;
+            top: 0px;
+            background: #FFFFFF;
+        }
     }
     &__item-text{
-        margin-left: 50px;
-
+        display: none;
+        padding: 0 5px 75px 50px;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0 0 4px;
+    }
+    &__item.questions__item--active{
+        .questions__item-title::after{
+            transform: rotate(180deg)
+        }
+        .questions__item-text{
+            display: block;
+        }
     }
 }
 
